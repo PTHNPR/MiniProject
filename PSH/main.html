@@ -3,9 +3,48 @@
 <html>
     <head>
         <title></title>
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <script src="/signUp/signUp.php" ></script>
-        <a href="signIn.php">로그인</a>
+        <header class="main_header">
+            <div class="main_header_1">
+                <div class="header_site_name">
+                    사이트 이름
+                </div>
+    
+                <div class="header_div">
+                    <div class="sign_div">
+                        <span class="sign_span">Sign In</span>
+                    </div>
+                    <div class="category_div">
+                        <ul class="category_ul">
+                            <li><a href="allBoard.html">전체</a></li>
+                            <li><a href="freeBoard.html">자유</a></li>
+                            <li><a href="studyBoard.html">STUDY</a></li>
+                            <li><a href="noticeBoard.html">공지사항</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </header>
+        <section class="main_section">
+            <container class="tableContainer">
+                <div>최신 글</div>
+                <table class="main_noticeBorder">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>날짜</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </container>
+        </section>
     </body>
 </html>
