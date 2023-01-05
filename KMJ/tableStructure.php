@@ -166,7 +166,7 @@
         th.title{
             width: 100%;
         }
-        
+
         
         
     </style>
@@ -211,7 +211,7 @@
                         <th scope="col" class="no">글쓴이</th>
                         <th scope="col" class="no">날짜</th>
                     </tr>
-                </thead>
+                </thead> 
                 <!--공지사항 게시글-->
                 <tbody>
                     <tr class="notice">
