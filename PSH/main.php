@@ -4,6 +4,8 @@
     <head>
         <title></title>
         <link rel="stylesheet" href="css/main.css">
+        <!-- <script src="js/mainBoard.js"></script> -->
+        <script src="php/mainBoard.php"></script>
     </head>
     <body>
         <header class="main_header">
