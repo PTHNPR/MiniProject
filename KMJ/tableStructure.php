@@ -15,6 +15,9 @@
             margin: 0 auto;
             max-width: 1300px;
             width: 100%;
+
+            background-color: violet;
+
             /* width: 1300px; */
         }
         .main_wrap{
@@ -26,15 +29,14 @@
         a:link { color:white; text-decoration:none; }
         a:visited { color:white; text-decoration:none; }
         a:hover { color:white; text-decoration:none; }
+        
         /* 헤드 배너 전체 구역 */
         div.header_wrap{
-
             clear: both;
             position:absolute; /* 절대적 위치고정 */
             height: 200px;
             width: 1300px;
             border-bottom: 1px solid black;
-            
         }
         
         /* 사이트 이름 칸 */
@@ -114,12 +116,15 @@
             width: 900px;
             height: 700px;
             
-            position: absolute;
-            top: 201px;
             clear: both;
-            left: 310px;
+            position: relative;
+            top: 201px;
+            /* 반응형 중앙정렬 수식 */
+            left: 50%;
+            margin-left: calc(900px/-2);
         }
         .content_banner{
+            clear: both;
             position: absolute;
             width: 900px;
             height: 50px;
@@ -137,28 +142,51 @@
             font-size: 20px; /*글자크기*/
         }
         .not_pos_wrap{
+            clear: both;
             position: absolute;
             width: 900px;
             height: 650px;
             top: 50px;
-            border: 1px 0px solid black;
-            /* background-color: aquamarine */
+            
+            background-color: aquamarine
         }
 
         thead{
             border-top: 1px solid black;
         }
         /*제일 위에 th */
+        tr{
+            white-space: nowrap;
+            border: 1px solid #ccc;
+        }
         th{
             white-space: nowrap; /* 불필요한 공백제거 */
             padding: 9px 50px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid #7F7F7F;
             
-            /* border-top: 1px solid #ccc;
-            border-bottom: 1px solid #BBB; */
         }
         td{
             white-space: nowrap;
             padding: 9px 50px;
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+        /* 공지사항&게시글 맨 하단의 검정줄 */
+        .notice_final td{
+            border-bottom: 1px solid black;
+        }
+        /* 공지사항 좌우 검정 줄 */
+        th:first-child, td:first-child {
+            border-left: 1px solid black;
+        }
+        th:last-child, td:last-child{
+            border-right: 1px solid black;
+        }
+        
+        /* 공지사항과 전체게시글 공백 */
+        .main_table{
+            padding-top: 10px;
         }
         .no{
             text-align: center;
@@ -186,7 +214,7 @@
     </div>
     <!-- 카테고리 -->
     <div class="menu_wrap">
-            <a class="item" href="#">전체</a>
+            <a class="item" href="#">게시판</a>
             <a class="item" href="#">공지사항</a>
             <a class="item" href="#">자유</a>
             <a class="item" href="#">Study</a>
@@ -202,17 +230,16 @@
         <!--공지사항 + 게시글 구역-->
         <div class="not_pos_wrap">
         <!--공지사항-->
-            <table width="100%" class="notice_table">
+        <table width="100%" class="notice_table">
                 <!--게시글 양식-->
                 <thead>
-                    <tr>
+                    <tr class="th_hr">
                         <th scope="col" class="no">번호</th>
                         <th scope="col" class="title">제목</th>
                         <th scope="col" class="no">글쓴이</th>
                         <th scope="col" class="no">날짜</th>
                     </tr>
                 </thead> 
-                <!--공지사항 게시글-->
                 <tbody>
                     <tr class="notice">
                         <td class="notice_box">공지</td>
@@ -226,7 +253,7 @@
                         <td class="author">관리자2</td>
                         <td class="time">2022.12.29</td>
                     </tr>
-                    <tr class="notice">
+                    <tr class="notice_final">
                         <td class="notice_box">공지</td>
                         <td class="title">공지 3입니다.</td>
                         <td class="author">관리자4</td>
@@ -234,13 +261,87 @@
                     </tr>
                 </tbody>
             </table>
-            <!--저장 확인용 주석-->
-            <!--저장 확인용 주석 재시도-->
-        
             <!--전체게시글-->
+            <table width="100%" class="main_table">
+                <!--게시글 양식-->
+                <thead>
+                    <tr class="th_hr">
+                        <th scope="col" class="no">게시판</th>
+                        <th scope="col" class="title">제목</th>
+                        <th scope="col" class="no">글쓴이</th>
+                        <th scope="col" class="no">날짜</th>
+                    </tr>
+                </thead> 
+                <!--공지사항 게시글-->
+                <tbody>
+                    <tr class="notice">
+                        <td class="notice_box">Study</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                    <tr class="notice">
+                        <td class="notice_box">Study</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                    <tr class="notice">
+                        <td class="notice_box">자유</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                    <tr class="notice">
+                        <td class="notice_box">자유</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                    <tr class="notice">
+                        <td class="notice_box">Study</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                    <tr class="notice">
+                        <td class="notice_box">Study</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                    <tr class="notice">
+                        <td class="notice_box">Study</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                    <tr class="notice">
+                        <td class="notice_box">Study</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                    <tr class="notice">
+                        <td class="notice_box">Study</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                    <tr class="notice_final">
+                        <td class="notice_box">자유</td>
+                        <td class="title">테스트 입니다.</td>
+                        <td class="author"></td>
+                        <td class="time">2022.12.01</td>
+                    </tr>
+                </tbody>
+            </table>
+            
             <div></div>
         </div>
     </div>
     </div>
+    <?php
+    ?>
 </body>
 </html>
