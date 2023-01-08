@@ -1,0 +1,231 @@
+/* 중앙정렬전 전체 값 초기화 */ 
+*{
+    margin: 0; padding: 0;
+}
+
+/* 중앙정렬화 */
+body{
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 100%;
+
+    /* background-color: violet; */
+
+    /* width: 1300px; */
+}
+.main_wrap{
+    height: 900px;
+}
+div{
+    display: block;
+}
+a:link { color:white; text-decoration:none; }
+a:visited { color:white; text-decoration:none; }
+a:hover { color:white; text-decoration:none; }
+
+/* 헤드 배너 전체 구역 */
+div.header_wrap{
+    clear: both;
+    position:absolute; /* 절대적 위치고정 */
+    height: 200px;
+    width: 1300px;
+    border-bottom: 1px solid black;
+}
+
+/* 사이트 이름 칸 */
+div.site{
+    position:absolute; /* 절대적 위치고정 */
+    height: 100px;
+    width: 300px;
+    left: 0px;
+    line-height : 100px; /* 글자 높이 맞추기*/
+    text-align: center; /* 텍스트 가로 배치 */
+    margin: 0px 50px;
+    padding:50px;
+    
+    
+    font-size: 24px; /*글자크기*/
+
+}
+/* 카테고리 포장 구역*/
+div.menu_wrap{
+    position:absolute; /* 절대적 위치고정 */
+    right: 0px;
+    height: 100px;
+    top: 100px;
+    width: 800px;
+    
+}
+/*로그인 둥글게 둥글게 */
+
+div.box{
+    position: absolute; /* 유동적 위치고정 */
+    top: 15px;
+    right: 110px;
+    line-height:45px; /* 글자 높이 맞추기*/
+    height: 50px;
+    width: 140px;
+    text-align: center; /* 텍스트 가로 배치 */
+    border: 10px solid white; /* 바깥 경계 */
+    background-color: #E0E0E0; /* 구역 확인용*/
+    font-size: 24px; /*글자크기*/
+    border-radius: 20px; /*상자 둥글게*/
+    z-index: 4;
+}
+
+.item:nth-child(1){
+    left: 80px;
+    border: 1px solid black;
+
+}
+.item:nth-child(2){
+    left: 230px;
+    border: 1px solid black;
+}
+.item:nth-child(3){
+   left: 380px;
+    border: 1px solid black;
+}
+.item:nth-child(4){
+    left: 530px;
+    border: 1px solid black;
+}
+.item{
+
+    position: absolute;/* 유동적 위치고정 */
+    float: right; /*첫번째 항목 가장 오른쪽부터*/
+    text-align: center;/* 텍스트 가로 배치 */
+    font-size: 24px; /*글자크기*/
+    height: 45px;
+    width: 149px;
+    
+    margin: 0 3px;
+    padding: 10px 0;
+    border: 0px solid black;
+    background-color: #9E9E9E;
+    line-height:45px;
+}
+.content_wrap{
+    width: 900px;
+    height: 700px;
+    
+    clear: both;
+    position: relative;
+    top: 201px;
+    /* 반응형 중앙정렬 수식 */
+    left: 50%;
+    margin-left: calc(900px/-2);
+
+}
+
+.login_wrap{
+    width: 800px;
+    height: 500px;
+    top: 100px;
+    /* 바로 상위 블럭 위치 인식*/
+    clear: both;
+    position: relative;
+
+    /* 반응형 중앙정렬 수식 */
+    left: 50%;
+    margin-left: calc(800px/-2);
+
+    
+}
+
+
+
+/*로그인 상단 표시*/
+.login_banner{
+    width: 800px;
+    height: 70px;
+     /* 바로 상위 블럭 위치 인식*/
+     clear: both;
+     position: relative;
+     
+     border-bottom: 1px solid black;
+}
+.login_text{
+    font-size: 30px; /*글자크기*/
+    padding: 15px;
+
+    left: 20px;
+    position: relative;
+}
+
+/*로그인 입력칸 전체*/
+.login_form{
+    width: 800px;
+    height: 430px;
+     /* 바로 상위 블럭 위치 인식*/
+     clear: both;
+     position: relative;
+     
+}
+
+
+
+.input,a{
+    height: 50px;
+    width: 400px;
+}
+.button{
+    position: relative;
+     /* 반응형 중앙정렬 수식 */
+     left: 50%;
+     margin-left: calc(48px/-2);
+}
+
+/* 로그인 버튼*/
+.login_button{
+    left: 15px;
+    border-radius: 10px;
+    width: 120px;
+    height: 50px;
+    color:white;
+    background-color: #7F7F7F;
+    position: relative;
+}
+td{
+    border: 10px;
+}
+td.login_blank{
+    padding: 10px;
+    text-align: center;
+}
+.register, .IdCh{
+    position: relative;
+    
+}
+.register{
+
+    /* 반응형 중앙정렬 수식 */
+    left: 83%;
+    margin-left: calc(183.15px/-2);
+
+}
+
+.IdCh{
+/* 반응형 중앙정렬 수식 */
+left: 82%;
+margin-left: calc(219.78px/-2);
+
+
+}
+
+.regi_box, .IdCh_box{
+    height: 50px;
+    border-radius: 10px;
+}
+.regi_box{
+    width: 50px;
+    background-color: #5E5E5E;
+    color: white;
+}
+.IdCh_box{
+    width: 60px;
+    background-color: #E0E0E0;
+}
+
+
+
