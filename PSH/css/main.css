@@ -1,8 +1,11 @@
 @import url(header.css);
 
 body{
-    max-width :850px;
+    width :850px;
+    height: 900px;
     margin: auto;
+    
+    
 }
 
 /* 헤더 */

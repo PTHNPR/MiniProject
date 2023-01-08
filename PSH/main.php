@@ -1,35 +1,23 @@
+<?php
+require_once("php/connDB.php"); // DB연결 파일을 불러온다, (사용 후 mysqli_close($conn); 권장  : db와 연결을 끊는다)
+
+$sql = 'select * from boardTable;';
+
+$result = mysqli_query($conn, $sql);
+
+$boardArr = mysqli_fetch_all($result);
+
+$boardArrLen = mysqli_num_rows($result);
+
+?>
+
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
-    <head>
-        <title></title>
-        <link rel="stylesheet" href="css/main.css">
-        <!-- <script src="js/mainBoard.js"></script> -->
-        <script src="php/mainBoard.php"></script>
-    </head>
+    <?php require_once("php/header.php");  ?>
     <body>
-        <header class="main_header">
-            <div class="main_header_1">
-                <div class="header_site_name">
-                    사이트 이름
-                </div>
-    
-                <div class="header_div">
-                    <div class="sign_div">
-                        <span class="sign_span">Sign In</span>
-                    </div>
-                    <div class="category_div">
-                        <ul class="category_ul">
-                            <li><a href="allBoard.html">전체</a></li>
-                            <li><a href="freeBoard.html">자유</a></li>
-                            <li><a href="studyBoard.html">STUDY</a></li>
-                            <li><a href="noticeBoard.html">공지사항</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </header>
+
+        
         <section class="main_section">
             <container class="tableContainer">
                 <div>최신 글</div>
@@ -43,7 +31,26 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php 
+                        $num = $boardArrLen;
 
+                        for($i = 0; $i < $boardArrLen; $i++){
+                                
+
+                        ?>
+                            <tr>
+                                <td><?= $num ?></td>
+                                <td><?= $boardArr[$i][1]; ?></td>
+                                <td><?= $boardArr[$i][3]; ?></td>
+                                <td><?= $boardArr[$i][4]; ?></td>
+                            </tr>
+                        <?php
+                            $num--;
+                        };
+
+                        mysqli_close($conn);
+
+                        ?>
                     </tbody>
                 </table>
             </container>
