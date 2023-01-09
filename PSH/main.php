@@ -14,12 +14,15 @@ $boardArrLen = mysqli_num_rows($result);
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
-    <?php require_once("php/header.php");  ?>
-    <body>
-
-        
-        <section class="main_section">
-            <container class="tableContainer">
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/mainBoard.js"></script>
+    </head>
+    <body> 
+        <?php require_once("php/header.php");  ?> <!-- 헤더 파일 -->
+        <container class="main_container">
+            <div class="table_container">
                 <div>최신 글</div>
                 <table class="main_noticeBorder">
                     <thead>
@@ -53,7 +56,7 @@ $boardArrLen = mysqli_num_rows($result);
                         ?>
                     </tbody>
                 </table>
-            </container>
-        </section>
+            </div>
+        </container>
     </body>
 </html>

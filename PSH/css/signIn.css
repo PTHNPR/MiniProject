@@ -1,4 +1,74 @@
-.signIn_section{
-    display: flex;
+@import url(header.css);
+
+.signIn_container{
     width: 100%;
 }
+
+.container_div{
+    display: flex;
+    margin: 30px auto auto auto;
+    flex-direction: column;
+    width: 600px;
+}
+
+.container_div > span{
+    font-size: 2.0rem;
+}
+
+.container_div hr{ width: 100%; }
+
+.singIn_form_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.signIn_form{
+    margin-right: 10px;
+}
+
+.signIn_input_div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+.signIn_input_div span{
+    display: inline-flex;
+    font-size: 1.2rem;
+    width: 100px;
+    margin-right: 5px;
+}
+
+.signIn_input_div input{
+    width: 300px;
+    height: 40px;
+    padding: 5px 5px 5px 10px;
+    font-size: 1.2rem;
+}
+
+.signIn_button{
+    width: 100px;
+    height: 90px;
+}
+
+.move_button{
+    display: inline-flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 0 35px 0 35px;
+}
+
+.move_button div{
+    background-color: aquamarine;
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+
+}
+
+.move_button div:hover{ cursor: pointer; }

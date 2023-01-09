@@ -14,7 +14,7 @@ $sql .= " values('$userId', '$userPw', '$userName', '$userNick', '$userEmail');"
 $result = mysqli_query($conn, $sql);    // 퀴리문 db에 전달, 반횐값은 boolean
 
 if($result){
-    echo "<script>alert('완료')</script>";
+    echo "<script>alert('완료'); location.replace('/signIn.php');</script>";
 }
 else{
     echo "<script>alert('실패 : ".mysqli_error($conn).");</script>";
