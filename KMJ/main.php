@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>MainPage</title>
-        <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <!-- 전체 배너 -->
@@ -11,15 +11,15 @@
     <div class="header_wrap">
     <!-- 사이트 이름 칸 -->
     <div class="site">
-        <h1>사이트 이름</h1>
+        <a href="main.php"  class="site_text" style="color: black; font-size: 50px;">사이트 이름</a>
     </div>
     <!-- 로그인 버튼 -->
     <div class="box">
-        <a>Login</a>
+        <a href="signIn.php">Login</a>
     </div>
     <!-- 카테고리 -->
     <div class="menu_wrap">
-            <a class="item" href="#">게시판</a>
+            <a class="item" href="#">전체게시판</a>
             <a class="item" href="#">공지사항</a>
             <a class="item" href="#">자유</a>
             <a class="item" href="#">Study</a>

@@ -19,16 +19,13 @@ body{
 div{
     display: block;
 }
+/*앵커 태그 전체 설정*/
 a{
     text-decoration: none;
 }
-
-
 a:link { color:white; text-decoration:none; }
 a:visited { color:white; text-decoration:none; }
 a:hover { color:white; text-decoration:none; }
-
-
 /* 헤드 배너 전체 구역 */
 div.header_wrap{
     clear: both;
@@ -50,9 +47,9 @@ div.site{
     padding:55px;
     font-size: 50px; /*글자크기*/
     
-    font-size: 50px; /*글자크기*/
-
 }
+
+
 /* 카테고리 포장 구역*/
 div.menu_wrap{
     position:absolute; /* 절대적 위치고정 */
@@ -111,6 +108,7 @@ div.box{
     background-color: #9E9E9E;
     line-height:45px;
 }
+
 .content_wrap{
     width: 900px;
     height: 700px;
@@ -124,7 +122,7 @@ div.box{
 
 }
 
-.login_wrap{
+.register_wrap{
     width: 800px;
     height: 500px;
     top: 100px;
@@ -139,10 +137,8 @@ div.box{
     
 }
 
-
-
-/*로그인 상단 표시*/
-.login_banner{
+/*회원가입 상단 표시*/
+.register_banner{
     width: 800px;
     height: 70px;
      /* 바로 상위 블럭 위치 인식*/
@@ -151,87 +147,60 @@ div.box{
      
      border-bottom: 1px solid black;
 }
-.login_text{
+.register_text{
     font-size: 30px; /*글자크기*/
     padding: 15px;
 
     left: 20px;
     position: relative;
 }
-
-/*로그인 입력칸 전체*/
+/* 회원가입 입력칸 전체*/
 .login_form{
     width: 800px;
-    height: 430px;
+    height: 530px;
      /* 바로 상위 블럭 위치 인식*/
      clear: both;
      position: relative;
      
 }
 
+table{
+    width: 800px;
+    height: 100px;
 
+    position: relative;
+    /* 반응형 중앙정렬 수식 */
+    left: 50%;
+    margin-left: calc(700px/-2);
+}
+button{
+    border-color: #E0E0E0;
+    border-radius: 10px;
+    min-height: 54px;
+    
+    font-size: 20px;
+    margin: 0px 10px ;
+    padding: 0px 30px;
+}
+.emailConfirm{
+    min-width: 140px;
+}
+.nicknameConfirm{
+    min-width: 250px;
+}
 
-.input,a{
+.input{
     height: 50px;
     width: 400px;
 }
-.button{
-    position: relative;
-     /* 반응형 중앙정렬 수식 */
-     left: 50%;
-     margin-left: calc(48px/-2);
+.small_input{
+    height: 50px;
+    width: 150px;
 }
 
 /* 로그인 버튼*/
-.login_button{
-    left: 15px;
-    border-radius: 10px;
-    width: 120px;
-    height: 50px;
-    color:white;
-    background-color: #7F7F7F;
-    position: relative;
-}
-td{
-    border: 10px;
-}
+
 td.login_blank{
-    padding: 10px;
     text-align: center;
 }
-.register, .IdCh{
-    position: relative;
-    
-}
-.register{
-
-    /* 반응형 중앙정렬 수식 */
-    left: 83%;
-    margin-left: calc(183.15px/-2);
-
-}
-
-.IdCh{
-/* 반응형 중앙정렬 수식 */
-left: 82%;
-margin-left: calc(219.78px/-2);
-
-
-}
-
-.regi_box, .IdCh_box{
-    height: 50px;
-    border-radius: 10px;
-}
-.regi_box{
-    width: 50px;
-    background-color: #5E5E5E;
-    color: white;
-}
-.IdCh_box{
-    width: 60px;
-    background-color: #E0E0E0;
-}
-
-
 
