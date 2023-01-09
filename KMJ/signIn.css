@@ -19,9 +19,15 @@ body{
 div{
     display: block;
 }
+a{
+    text-decoration: none;
+}
+
+
 a:link { color:white; text-decoration:none; }
 a:visited { color:white; text-decoration:none; }
 a:hover { color:white; text-decoration:none; }
+
 
 /* 헤드 배너 전체 구역 */
 div.header_wrap{
@@ -41,10 +47,10 @@ div.site{
     line-height : 100px; /* 글자 높이 맞추기*/
     text-align: center; /* 텍스트 가로 배치 */
     margin: 0px 50px;
-    padding:50px;
+    padding:55px;
+    font-size: 50px; /*글자크기*/
     
-    
-    font-size: 24px; /*글자크기*/
+    font-size: 50px; /*글자크기*/
 
 }
 /* 카테고리 포장 구역*/
