@@ -124,7 +124,7 @@ div.box{
 
 .register_wrap{
     width: 800px;
-    height: 500px;
+    height: 600px;
     top: 100px;
     /* 바로 상위 블럭 위치 인식*/
     clear: both;
@@ -203,4 +203,17 @@ button{
 td.login_blank{
     text-align: center;
 }
+td.regi_maker_button{
+    text-align: center;
+    border-color: #5E5E5E;
+    background-color: #5E5E5E;
+    border-radius: 10px;
+    width: 280px;
+    height: 60px;
+}
+a.regi_maker{
+    color: white;
+    text-align: center;
 
+    font-size: 28px;
+}
