@@ -56,10 +56,9 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td class="regi_box"><a class="register">회원가입</a></td>
+                            <td class="regi_box"><a class="register" href="signUp.php">회원가입</a></td>
                             <td width="5"></td>
-                            <td class="IdCh_box"><a class="IdCh">아이디 찾기</a></td>
-                            
+                            <td class="IdCh_box"><a class="IdCh">아이디 찾기</a></td>   
                         </tr>
                         </tbody>
                     </table>    

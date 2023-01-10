@@ -54,6 +54,39 @@
                         <td><input class="small_input" name="nickname" type="text" placeholder="닉네임을 입력하세요."></td>
                         <td><button type="button" class="nicknameConfirm">닉네임 중복 확인</button><td> 
                         </tr>
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                        <!--비밀번호-->
+                        <tr>
+                        <td class="login_blank"><label for="name">비밀번호</label></td>
+                        <td colspan="3"><input class="input" name="Id" type="text" placeholder="비밀번호를 입력하세요."></td>
+                        </tr>
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                        <!--비밀번호 확인-->
+                        <tr>
+                        <td class="login_blank"><label for="name">비밀번호 확인</label></td>
+                        <td colspan="3"><input class="input" name="Id" type="text" placeholder="비밀번호를 입력하세요."></td>
+                        </tr>
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                        <!--이메일-->
+                        <tr>
+                        <td class="login_blank"><label for="name">이메일</label></td>
+                        <td colspan="3"><input class="input" name="Id" type="text" placeholder="이메일을 입력하세요."></td>
+                        </tr>
+                        <tr>
+                            <td height="20"></td>
+                        </tr>
+                        <!--계정만들기 버튼-->
+                        <tr>
+                            <td></td>
+                            <!--style="cursor:pointer onclick="validationData()"-->
+                            <td colspan="3" class="regi_maker_button"><a class="regi_maker">계정만들기</a></td>
+                        </tr>
                         </tbody>
                     </table>
                 </form>
