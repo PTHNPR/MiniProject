@@ -16,8 +16,8 @@ $boardArrLen = mysqli_num_rows($result);
 <html>
     <head>
         <title></title>
-        <link rel="stylesheet" href="css/main.css">
         <script src="js/mainBoard.js"></script>
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body> 
         <?php require_once("php/header.php");  ?> <!-- 헤더 파일 -->

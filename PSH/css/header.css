@@ -88,6 +88,11 @@ a{ text-decoration: none; }
     height: 100%;
 }
 
+.userInfo_icon{
+    display: flex;
+    align-items: center;
+}
+
 .sign_span{
     width : 80px;
     height: 35px;
@@ -100,6 +105,54 @@ a{ text-decoration: none; }
 .sign_span:hover{ 
     background-color: #666666;
     cursor: pointer;
+}
+
+.sign_div i{
+    margin-left: 5px;
+}
+
+.userInfo_div{
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100px;
+    z-index: 100;
+    position: absolute;
+    top: 50px;
+    padding-top: 5px;
+}
+
+.menu_tri{
+    width: 5px;
+    border: 5px solid transparent;
+    border-bottom-color: #E0E0E0;
+    margin-right: 7px;
+}
+
+.userInfo_icon:hover{ cursor: pointer; }
+
+.userInfo_menu{
+    display: flex;
+    background-color: #E0E0E0;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    padding: 5px 0 5px 0;
+
+}
+
+.signOut_btn{ 
+    font-size: 1.2rem;
+    font-weight: bolder;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.signOut_btn:hover{ 
+    cursor: pointer;
+    background-color: rgb(84, 139, 221);
+    color: white;
 }
 
 .main_header hr{
