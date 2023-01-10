@@ -7,7 +7,7 @@
     </head>
     <body>
         <?php require_once("php/header.php");  ?> <!-- 헤더 파일 -->
-        <form id="signUpForm" method="post" action="/php/signUpServer.php">
+        <form id="signUpForm" method="post" action="/php/signUpSv.php">
             아이디<input type="text" name="userId" id="userId"><br>
             이름<input type="text" name="userName" id="userName"><br>
             닉네임<input type="text" name="userNick" id="userNick"><br>
