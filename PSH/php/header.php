@@ -9,14 +9,12 @@ session_start();
 <script src="https://kit.fontawesome.com/b71869ee5c.js" crossorigin="anonymous"></script>
 <script src="js/header.js"></script>
 <header class="main_header">
-    <div class="main_header_1">
+    <container class="header_container">
         <div class="header_site_name" onclick="location.href='main.php'">
             사이트 이름
         </div>
-
         <div class="header_div">
             <div class="sign_div">
-
                 <?php if(isset($_SESSION["uGuId"])){ ?>
                     <div class="userInfo_icon" onclick="clickedMenu()">
                         <i class="fa-solid fa-circle-user fa-2x"></i>
@@ -25,7 +23,7 @@ session_start();
                     <div class="userInfo_div" id="userInfo_div" >
                         <div class="menu_tri"></div>
                         <div class="userInfo_menu">
-                            <span class="signOut_btn">Sign Out</span>
+                            <span class="signOut_btn" onclick="location.href='php/signOutSv.php'">Sign Out</span>
                         </div>
                     </div>
                 <?php } else { ?>
@@ -41,6 +39,5 @@ session_start();
                 </ul>
             </div>
         </div>
-    </div>
-    <hr>
+    </container>
 </header>
