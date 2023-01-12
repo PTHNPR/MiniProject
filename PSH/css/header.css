@@ -10,7 +10,7 @@ body{
 .main_header{
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin: 20px auto 20px auto;
     border-bottom: 2px solid gray;
 }
 
@@ -26,8 +26,10 @@ body{
 
 .header_site_name{
     display: flex;
-    font-size: 3rem;
-    width: 300px;
+    font-size: 4.1rem;
+    font-style: oblique;
+    font-weight: bolder;
+    /* width: 300px; */
     text-align: center;
     line-height: 100px;
     margin-left: 60px;
