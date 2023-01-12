@@ -30,7 +30,6 @@
 .signUp_input_div{
     display: flex;
     flex-direction: column;
-    margin-bottom: 5px;
 }
 
 .signUp_input_div > div:nth-child(1){
@@ -61,13 +60,13 @@
     width: 130px;
     height: 40px;
     margin-left: 30px;
-
 }
 
 .input_msg{
     height: 30px;
     line-height: 30px;
-    margin-left: 110px;
+    margin-left: 120px;
+    font-size: 1.0rem;
 }
 
 .signUp_btn{

@@ -20,7 +20,7 @@
                         <input type="text" name="userId" id="userId">
                         <button class="checked_btn" type="button">ID 중복확인</button>
                     </div>
-                    <div class="input_msg" ></div>
+                    <div class="input_msg" id="userId_msg"></div>
                 </div>
                 <div class="signUp_input_div">
                     <div class="input_userNick">
@@ -30,7 +30,7 @@
                         <input type="text" name="userNick" id="userNick">
                         <button class="checked_btn" type="button">닉네임 중복확인</button>
                     </div>
-                    <div class="input_msg" ></div>
+                    <div class="input_msg" id="userNick_msg"></div>
                 </div>
                 <div class="signUp_input_div" id="signUp_input_userName">
                     <div class="input_userName">
@@ -47,7 +47,7 @@
                         </label>
                         <input type="password" name="userPw" id="userPw">
                     </div>
-                    <div class="input_msg" ></div>
+                    <div class="input_msg" id="userPw_msg"></div>
                 </div>
                 <div class="signUp_input_div">
                     <div class="input_comfirmPw">
@@ -56,7 +56,7 @@
                         </label>
                         <input type="password" name="comfirmPw" id="comfirmPw"><br>
                     </div>
-                    <div class="input_msg" ></div>
+                    <div class="input_msg" id="confirmPw_msg"></div>
                 </div>
                 <div class="signUp_input_div">
                     <div class="input_userEmail">
@@ -65,7 +65,7 @@
                         </label>
                         <input type="text" name="userEmail" id="userEmail">
                     </div>
-                    <div class="input_msg" ></div>
+                    <div class="input_msg" id="userEmail_msg"></div>
                 </div>
             </form>
             <button class="signUp_btn" id="signUp_btn" type="submit" form="signUp_form" >가입하기</button>
