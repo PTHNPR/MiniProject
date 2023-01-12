@@ -27,9 +27,9 @@ $noticeLen = mysqli_num_rows($noticeResult);
                 </div>
                 <div class="table_division">
                     <div class="t_category">구 분</div>
-                    <div class="t_title" id="t_title" style="text-align: center;">제목</div>
+                    <div class="t_title" id="t_title" style="text-align: center;">제 목</div>
                     <div class="t_nick">작성자</div>
-                    <div class="t_date">날짜</div>
+                    <div class="t_date">날 짜</div>
                 </div>
                 <div class="notice_board">
                     <table class="common_board_table">
