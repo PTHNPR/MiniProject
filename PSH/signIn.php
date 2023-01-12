@@ -13,9 +13,11 @@
             </div>
             <div class="singIn_form_div"> 
                 <form class="signIn_form" id="signIn_form" method="post" action="php/signInSv.php">
-                    <div class="signIn_input_container">
-                        <div class="signIn_input_div"><label for="userId"><span>아이디</span></label><input type="text" name="userId" id="userId"></div>
-                        <div class="signIn_input_div"><label for="userPw"><span>비밀번호</span></label><input type="password" name="userPw" id="userPw"></div>
+                    <div class="signIn_input_div">
+                        <div class="signIn_input_box"><label for="userId"><span>아이디</span></label><input type="text" name="userId" id="userId"></div>
+                        <div class="checked_msg" id="checked_userId_msg"></div>
+                        <div class="signIn_input_box"><label for="userPw"><span>비밀번호</span></label><input type="password" name="userPw" id="userPw"></div>
+                        <div class="checked_msg" id="checked_userPw_msg"></div>
                     </div>
                 </form>
                 <button class="signIn_button" type="submit" form="signIn_form">로그인</button>

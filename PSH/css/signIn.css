@@ -26,29 +26,34 @@
     margin-top: 40px;
 }
 
-.signIn_input_div{
+.signIn_input_box{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-
 }
 
-.signIn_input_div span{
+.signIn_input_box span{
     display: inline-flex;
     font-size: 1.2rem;
     width: 100px;
 }
 
-.signIn_input_div input{
+.signIn_input_box input{
     width: 300px;
     height: 40px;
     padding: 5px 5px 5px 10px;
     font-size: 1.2rem;
 }
 
+.checked_msg{
+    height: 30px;
+    line-height: 30px;
+    margin-left: 100px;
+    font-size: 1.0rem;
+}
+
 .signIn_button{
     width: 100px;
-    height: 90px;
+    height: 110px;
     margin-left: 10px;
 }
 
