@@ -1,17 +1,13 @@
-<?php 
+<?php session_start(); ?>
 
-session_start();
-
-?>
-
-<!-- <link rel="stylesheet" href="css/header.css"> -->
-<!-- 폰트 사용 -->
+<link rel="stylesheet" href="css/header.css">
+<!-- 폰트어썸 사용(아이콘 사용) -->
 <script src="https://kit.fontawesome.com/b71869ee5c.js" crossorigin="anonymous"></script>
 <script src="js/header.js"></script>
 <header class="main_header">
     <container class="header_container">
         <div class="header_site_name" onclick="location.href='main.php'">
-            사이트 이름
+            Make by PHP
         </div>
         <div class="header_div">
             <div class="sign_div">

@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <html>
     <head>
-        <title></title>
+        <title>회원가입</title>
         <link rel="stylesheet" href="css/signUp.css" >
     </head>
     <body>
