@@ -1,14 +1,1 @@
-/* @import url(header.css); */
-
-.main_noticeDiv{ margin-bottom: 5px; }
-.main_noticeDiv tr:nth-last-child(1) td{ border-bottom: 1px solid gray; }
-.main_boardDiv{ border-top: 1px solid gray; }
-
-.main_noticeTable, .main_boardTable{
-    border-collapse: collapse;
-    width: 100%;
-}
-
-/* 메인 페이지 공지사항용 구분 */
-#t_notice{ font-weight: bolder; color: red;}
 

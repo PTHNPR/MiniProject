@@ -1,0 +1,73 @@
+
+.board_div{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    margin: auto;
+    
+}
+
+.board_div td{
+    height: 40px;
+    text-align: center;
+    padding: 0;
+    border-bottom: 1px solid gainsboro;
+}
+
+.board_title{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.board_title > span{
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+.table_division{
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    font-weight: bolder;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.admin_noticeDiv{ margin-bottom: 5px; }
+.admin_noticeDiv tr:nth-last-child(1) td{ border-bottom: 1px solid gray; }
+.user_boardDiv{ border-top: 1px solid gray; }
+
+.admin_noticeTable, .user_boardTable{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.common_board_table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#t_title{
+    width: 50%;
+    text-align: initial;
+    padding-left: 10px;
+}
+
+#t_title, .t_nick{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* 공지사항용 구분 */
+#t_notice{ font-weight: bolder; color: red;}
+
+#t_title:hover{ cursor: pointer; }
+
+.t_category{ width: 12%; font-weight: bolder; }
+.t_nick{ width: 13%; }
+.t_date{ width: 25%; }

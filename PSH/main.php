@@ -1,8 +1,8 @@
 <?php
 require_once("php/connDB.php"); // DB연결 파일을 불러온다, (사용 후 mysqli_close($conn); 권장  : db와 연결을 끊는다)
 
-$noticeSql = 'select nTitle, nAdminNick, nDate from noticeTable order by nDate desc limit 3;';
-$boardSql = 'select bCategory, bTitle, bUserNick, bDate from boardTable order by bDate desc limit 20;';
+$noticeSql = "select nTitle, nAdminNick, nDate from noticeTable order by nDate desc limit 3;";
+$boardSql = "select bCategory, bTitle, bUserNick, bDate from boardTable order by bDate desc limit 20;";
 
 $noticeResult = mysqli_query($conn, $noticeSql);
 $boardResult = mysqli_query($conn, $boardSql);
@@ -21,14 +21,14 @@ $boardLen = mysqli_num_rows($boardResult);
     <head>
         <title>메인</title>
         <script src="js/mainBoard.js"></script>
-        <link rel="stylesheet" href="css/boardSameCss.css">
+        <link rel="stylesheet" href="css/commonBoard.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body> 
         <?php require_once("php/header.php");  ?> <!-- 헤더 파일 -->
         <container class="main_container">
-            <container class="table_container">
-                <div class="main_title">
+            <div class="board_div">
+                <div class="board_title">
                     <span>최신 글</span>
                 </div>
                 <div class="table_division">
@@ -37,8 +37,8 @@ $boardLen = mysqli_num_rows($boardResult);
                     <div class="t_nick">작성자</div>
                     <div class="t_date">날짜</div>
                 </div>
-                <div class="main_noticeDiv">
-                    <table class="main_noticeTable">
+                <div class="admin_noticeDiv">
+                    <table class="admin_noticeTable">
                         <tbody>
                         <?php 
                             for($i = 0; $i < $noticeLen; $i++){       
@@ -53,8 +53,8 @@ $boardLen = mysqli_num_rows($boardResult);
                         </tbody>
                     </table>
                 </div>
-                <div class="main_boardDiv">
-                    <table class="main_boardTable">
+                <div class="user_boardDiv">
+                    <table class="user_boardTable">
                         <tbody>
                             <?php 
                             for($i = 0; $i < $boardLen; $i++){       
@@ -72,7 +72,7 @@ $boardLen = mysqli_num_rows($boardResult);
                         </tbody>
                     </table>
                 </div>
-            </containe>
+            </div>
         </container>
     </body>
 </html>

@@ -16,14 +16,13 @@ $noticeLen = mysqli_num_rows($noticeResult);
 <html>
     <head>
         <title>공지사항</title>
-        <link rel="stylesheet" href="css/boardSameCss.css">
-        <link rel="stylesheet" href="css/noticeBoard.css">
+        <link rel="stylesheet" href="css/commonBoard.css">
     </head>
     <body> 
         <?php require_once("php/header.php");  ?> <!-- 헤더 파일 -->
         <container class="main_container">
-            <container class="table_container">
-                <div class="main_title">
+            <div class="board_div">
+                <div class="board_title">
                     <span>공지사항</span>
                 </div>
                 <div class="table_division">
@@ -33,7 +32,7 @@ $noticeLen = mysqli_num_rows($noticeResult);
                     <div class="t_date">날짜</div>
                 </div>
                 <div class="notice_board">
-                    <table class="notice_table">
+                    <table class="common_board_table">
                         <tbody>
                         <?php 
                             $count = $noticeLen;
@@ -41,7 +40,7 @@ $noticeLen = mysqli_num_rows($noticeResult);
                             for($i = 0; $i < $noticeLen; $i++){       
                             ?>
                             <tr>
-                                <td class="t_category" id="t_notice"><?= $count ?></td>
+                                <td class="t_category"><?= $count ?></td>
                                 <td class="t_title" id="t_title"><?= $noticeArr[$i][0]; ?></td>
                                 <td class="t_nick"><?= $noticeArr[$i][1]; ?></td>
                                 <td class="t_date"><?= $noticeArr[$i][2]; ?></td>
@@ -55,7 +54,7 @@ $noticeLen = mysqli_num_rows($noticeResult);
                         </tbody>
                     </table>
                 </div>
-            </containe>
+            </div>
         </container>
     </body>
 </html>
