@@ -1,8 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>SignInPage</title>
-    <link rel="stylesheet" href="signIn.css"> 
+    <link rel="stylesheet" href="signIn.css">
+    <script>
+        function check_input()
+        {
+        if (!document.login.id.value){
+                alert("아이디를 입력하세요.")
+                document.form.id.focus();
+                return;
+        }
+
+        if (!document.login.pw.value){
+                alert("비밀번호를 입력하세요.")
+                document.login.pw.focus();
+                return;
+        }
+        document.login.submit();
+        }
+    </script> 
 </head>
 <body>
 <!-- 전체 배너 -->
@@ -33,7 +51,7 @@
                 <div class="login_text">로그인</div>
             </div>
             <div class="login_form">
-                <form>
+                <form name="login" method="post" action="login.php">
                     <table>
                         <tbody class="form">
                         <tr>
@@ -41,15 +59,15 @@
                         </tr>
                         <tr>
                         <td class="login_blank"><label for="name">아이디</label></td>
-                        <td colspan="3"><input class="input" name="name" type="text" placeholder="아이디를 입력하세요."></td>
-                        <td class="login_button" rowspan="3" ><a class="button">로그인</a><td> 
+                        <td colspan="3"><input class="input" name="id" type="text" placeholder="아이디를 입력하세요."></td>
+                        <td class="login_button" rowspan="3" ><button class="button" onclick="check_input()">로그인</button><td> 
                         </tr>
                         <tr>
                             <td height="15"></td>
                         </tr>
                         <tr>
                         <td class="login_blank"><label for="password">비밀번호</label></td>
-                        <td colspan="3"><input class="input" name="password" type="password" placeholder="비밀번호를 입력하세요."></td>
+                        <td colspan="3"><input class="input" name="pw" type="password" placeholder="비밀번호를 입력하세요."></td>
                         </tr>
                         <tr>
                             <td height="15"></td>
@@ -69,16 +87,5 @@
     </div>
 </body>
 </html>
-<?php
-
-session_start();
-
-if (!isset($_SESSION["userid"]))
-    echo "<a href='session_login.php'>로그인</a>";
-else
-    echo $_SESSION["username"]."님"." <a href='session_logout.php'>로그아웃</a>"
-
-
-?>
 
 

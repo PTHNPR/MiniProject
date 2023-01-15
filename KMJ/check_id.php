@@ -10,24 +10,24 @@
     <h3>아이디 중복체크</h3>
     <div>
     <?php
-    $userId = $_GET["userId"];
+    $id = $_GET["id"];
 
-    if(!$userId){
+    if(!$id){
         echo ("아이디를 입력해 주세요!");
     }
     else{
         $con = mysqli_connect("localhost", "KMJ", "123456", "miniproject");
-        $sql = "select * from usertable where userId='$userId'";
+        $sql = "select * from usertable where userId='$id'";
         $result = mysqli_query($con, $sql);
 
         $num_record = mysqli_num_rows($result);
         
         if($num_record){
-            echo $userId . "아이디는 중복됩니다.<br>";
+            echo $id . "아이디는 중복됩니다.<br>";
             echo "다른 아이디를 사용해 주세요!<br>";
         }
         else{
-            echo $userId . "아이디는 사용 가능합니다.<br>";
+            echo $id . "아이디는 사용 가능합니다.<br>";
         }
         mysqli_close($con);
     }

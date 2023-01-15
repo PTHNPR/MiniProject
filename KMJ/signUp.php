@@ -4,12 +4,12 @@
     <!-- 회원가입 페이지 -->
     <meta charset="utf-8">
     <title>signUpPage</title>
-    <link rel="stylesheet" href="signUp.css">
+    <link rel="stylesheet" type="text/css" href="signUp.css">
     <script>
         function check_input() {
-            if (!document.member.userId.value){
+            if (!document.member.id.value){
                 alert("아이디를 입력하세요!");
-                document.member.userId.focus();
+                document.member.id.focus();
                 return;
             }
             if (!document.member.name.value){
@@ -17,19 +17,19 @@
                 document.member.name.focus();
                 return;
             }
-            if (!document.member.nickname.value){
+            if (!document.member.nick.value){
                 alert("닉네임을 입력하세요!");
-                document.member.nickname.focus();
+                document.member.nick.focus();
                 return;
             }
-            if (!document.member.pass.value){
+            if (!document.member.pw.value){
                 alert("비밀번호를 입력하세요!");
-                document.member.pass.focus();
+                document.member.pw.focus();
                 return;
             }
-            if (!document.member.pass_confirm.value){
+            if (!document.member.pwc.value){
                 alert("비밀번호 확인을 입력하세요!");
-                document.member.pass_confirm.focus();
+                document.member.pwc.focus();
                 return;
             }
             if (!document.member.email.value){
@@ -38,11 +38,11 @@
                 return;
             }
             //비밀번호 입력과 비밀번호 확인입력이 다를 경우
-            if(document.member.pass.value!=
-                document.member.pass_confirm.value){
+            if(document.member.pw.value!=
+            document.member.pwc.value){
                     alert("비밀번호가 일치하지 않습니다.\n다시 입력해 주세요!");
-                document.member.pass.focus();
-                document.member.pass.select();
+                document.member.pwc.focus();
+                document.member.pwc.select();
                 retrun;
                 }
             document.member.submit();
@@ -53,12 +53,12 @@
         // 가보자고
 
         function check_id(){
-        window.open("check_id.php?userId="+document.member.userId.value,
+        window.open("check_id.php?id="+document.member.id.value,
                     "IDcheck",
                     "left=700,top=300,width=380,height=160,scrollbars=no,resizable=yes");
         }
         function check_nickname(){
-        window.open("check_nickname.php?userNick="+document.member.userNick.value,
+        window.open("check_nickname.php?nick="+document.member.nick.value,
                     "Nickcheck",
                     "left=700,top=300,width=380,height=160,scrollbars=no,resizable=yes");
         }
@@ -101,7 +101,7 @@
                         </tr>
                         <tr>
                         <td class="login_blank"><label for="name">아이디</label></td>
-                        <td colspan="3"><input class="input" name="userId" type="text" placeholder="아이디를 입력하세요."></td>
+                        <td colspan="3"><input class="input" name="id" type="text" placeholder="아이디를 입력하세요."></td>
                         <td><button type="button" class="emailConfirm" onclick="check_id()">ID 중복 확인</button><td> 
                         </tr>
                         <tr>
@@ -111,7 +111,7 @@
                         <td class="login_blank"><label for="password">이름</label></td>
                         <td><input class="small_input" name="name" type="text" placeholder="이름을 입력하세요."></td>
                         <td class="login_blank"><label for="password">닉네임</label></td>
-                        <td><input class="small_input" name="userNick" type="text" placeholder="닉네임을 입력하세요."></td>
+                        <td><input class="small_input" name="nick" type="text" placeholder="닉네임을 입력하세요."></td>
                         <td><button type="button" class="nicknameConfirm" onclick="check_nickname()">닉네임 중복 확인</button><td> 
                         </tr>
                         <tr>
@@ -120,7 +120,7 @@
                         <!--비밀번호-->
                         <tr>
                         <td class="login_blank"><label for="name">비밀번호</label></td>
-                        <td colspan="3"><input class="input" name="pass" type="password" placeholder="비밀번호를 입력하세요."></td>
+                        <td colspan="3"><input class="input" name="pw" type="password" placeholder="비밀번호를 입력하세요."></td>
                         </tr>
                         <tr>
                             <td height="15"></td>
@@ -128,7 +128,7 @@
                         <!--비밀번호 확인-->
                         <tr>
                         <td class="login_blank"><label for="name">비밀번호 확인</label></td>
-                        <td colspan="3"><input class="input" name="pass_confirm" type="password" placeholder="비밀번호를 입력하세요."></td>
+                        <td colspan="3"><input class="input" name="pwc" type="password" placeholder="비밀번호를 입력하세요."></td>
                         </tr>
                         <tr>
                             <td height="15"></td>
