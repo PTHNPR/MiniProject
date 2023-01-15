@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>SignInPage</title>
     <link rel="stylesheet" href="signIn.css"> 
+<script>
+    function check_input()
+    {
+    if (!document.login.id.value){
+            alert("아이디를 입력하세요");
+            document.login_form
+    }
+
+    }
+</script>
+
 </head>
 <body>
 <!-- 전체 배너 -->
