@@ -1,18 +1,13 @@
 <?php
-require_once("php/connDB.php"); // DB연결 파일을 불러온다, (사용 후 mysqli_close($conn); 권장  : db와 연결을 끊는다)
+require_once("php/noticeDBsql.php"); // 공지사항 쿼리문 (DB 연결 포함)
 
-$noticeSql = "select nTitle, nAdminNick, nDate from noticeTable order by nDate desc limit 3;";
-$boardSql = "select bCategory, bTitle, bUserNick, bDate from boardTable order by bDate desc limit 20;";
+$boardSql = "select bCategory, bTitle, bUserNick, bDate, bGuId from boardTable order by bDate desc limit 20;";
 
-$noticeResult = mysqli_query($conn, $noticeSql);
 $boardResult = mysqli_query($conn, $boardSql);
 
-$noticeArr = mysqli_fetch_all($noticeResult);
 $boardArr = mysqli_fetch_all($boardResult);
 
-$noticeLen = mysqli_num_rows($noticeResult);
 $boardLen = mysqli_num_rows($boardResult);
-
 ?>
 
 <!DOCTYPE html>
@@ -35,12 +30,13 @@ $boardLen = mysqli_num_rows($boardResult);
                 <div class="user_boardDiv">
                     <table class="user_boardTable">
                         <tbody>
-                            <?php 
+                            <?php
+
                             for($i = 0; $i < $boardLen; $i++){       
                             ?>
                             <tr>
                                 <td class="t_category"><?= $boardArr[$i][0] ?></td>
-                                <td class="t_title" id="t_title"><?= $boardArr[$i][1]; ?></td>
+                                <td class="t_title" id="t_title" onclick="location.href='selectBoard.php?num=<?= $boardArr[$i][4]; ?>'"><?= $boardArr[$i][1]; ?></td>
                                 <td class="t_nick"><?= $boardArr[$i][2]; ?></td>
                                 <td class="t_date"><?= $boardArr[$i][3]; ?></td>
                             </tr>

@@ -1,18 +1,13 @@
 <?php
-require_once("php/connDB.php"); // DB연결 파일을 불러온다, (사용 후 mysqli_close($conn); 권장  : db와 연결을 끊는다)
+require_once("php/noticeDBsql.php"); // 공지사항 쿼리문 (DB 연결 포함)
 
-$noticeSql = "select nTitle, nAdminNick, nDate from noticeTable order by nDate desc limit 3;";
-$boardSql = "select bTitle, bUserNick, bDate from boardTable where bCategory='자유' order by bDate desc;";
+$boardSql = "select bTitle, bUserNick, bDate bGuId from boardTable where bCategory='자유' order by bDate desc;";
 
-$noticeResult = mysqli_query($conn, $noticeSql);
 $boardResult = mysqli_query($conn, $boardSql);
 
-$noticeArr = mysqli_fetch_all($noticeResult);
 $boardArr = mysqli_fetch_all($boardResult);
 
-$noticeLen = mysqli_num_rows($noticeResult);
 $boardLen = mysqli_num_rows($boardResult);
-
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +16,7 @@ $boardLen = mysqli_num_rows($boardResult);
     <head>
         <title>자유 게시판</title>
         <link rel="stylesheet" href="css/commonBoard.css">
+        <script src="js/boardJs.js"></script>
     </head>
     <body> 
         <?php require_once("php/header.php");  ?> <!-- 헤더 파일 -->
@@ -39,7 +35,7 @@ $boardLen = mysqli_num_rows($boardResult);
                             ?>
                             <tr>
                                 <td class="t_category"><?= $count ?></td>
-                                <td class="t_title" id="t_title"><?= $boardArr[$i][0]; ?></td>
+                                <td class="t_title" id="t_title" onclick="location.href='selectBoard.php?num=<?= $boardArr[$i][1]; ?>'"><?= $boardArr[$i][0]; ?></td>
                                 <td class="t_nick"><?= $boardArr[$i][1]; ?></td>
                                 <td class="t_date"><?= $boardArr[$i][2]; ?></td>
                             </tr>
@@ -50,6 +46,14 @@ $boardLen = mysqli_num_rows($boardResult);
                             ?>
                         </tbody>
                     </table>
+                </div>
+                <div class="insertBoard_btn_div">
+                    <?php
+                        if(isset($_SESSION["uGuId"])){ ?>
+                            <button type="button" class="insertBoard_btn" onclick="location.href='insertBoard.php?Category=자유'" >글 작성</button>
+                    <?php } else { ?>
+                            <button type="button" class="insertBoard_btn" onclick="signInComf()">글 작성</button>
+                    <?php };?>    
                 </div>
             </div>
         </container>

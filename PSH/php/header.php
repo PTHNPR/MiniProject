@@ -10,7 +10,9 @@
                 </div>
                 <div class="header_div">
                     <div class="sign_div">
-                        <?php if(isset($_SESSION["uGuId"])){ ?>
+                        <?php
+
+                        if(isset($_SESSION["uGuId"])){ ?>
                             <div class="userInfo_icon" onclick="clickedMenu()">
                                 <i class="fa-solid fa-circle-user fa-2x"></i>
                                 <i class="fa-solid fa-caret-down fa-lx"></i>

@@ -71,3 +71,17 @@
 .t_category{ width: 12%; font-weight: bolder; }
 .t_nick{ width: 13%; }
 .t_date{ width: 25%; }
+
+.insertBoard_btn_div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10px;
+    padding-right: 10px;
+}
+
+.insertBoard_btn{ 
+    width: 100px;
+    height: 40px; 
+}
