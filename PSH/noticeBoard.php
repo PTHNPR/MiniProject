@@ -1,7 +1,7 @@
 <?php
 require_once("php/connDB.php"); // DB연결 파일을 불러온다, (사용 후 mysqli_close($conn); 권장  : db와 연결을 끊는다)
 
-$noticeSql = 'select nTitle, nAdminNick, nDate from noticeTable order by nDate desc;';
+$noticeSql = 'select nGuId, nTitle, nAdminNick, nDate from noticeTable order by nDate desc;';
 
 $noticeResult = mysqli_query($conn, $noticeSql);
 
@@ -41,9 +41,9 @@ $noticeLen = mysqli_num_rows($noticeResult);
                             ?>
                             <tr>
                                 <td class="t_category"><?= $count ?></td>
-                                <td class="t_title" id="t_title"><?= $noticeArr[$i][0]; ?></td>
-                                <td class="t_nick"><?= $noticeArr[$i][1]; ?></td>
-                                <td class="t_date"><?= $noticeArr[$i][2]; ?></td>
+                                <td class="t_title" id="t_title" onclick="location.href='selectBoard.php?num=<?= $noticeArr[$i][0]; ?>'"><?= $noticeArr[$i][1]; ?></td>
+                                <td class="t_nick"><?= $noticeArr[$i][2]; ?></td>
+                                <td class="t_date"><?= $noticeArr[$i][3]; ?></td>
                             </tr>
                         <?php 
                                 $count--;
