@@ -4,6 +4,7 @@ function signIn($argUserInfo){
     session_start();
 
     $_SESSION["uGuId"] = $argUserInfo["uGuId"];
+    $_SESSION["userId"] = $argUserInfo["userId"];
     $_SESSION["userNick"] = $argUserInfo["userNick"];
 
 
@@ -19,7 +20,7 @@ require_once("connDB.php");
 $userId = $_POST["userId"];
 $userPw = $_POST["userPw"];
 
-$sql = "select uGuId, userNick from userTable where userId = '$userId' and userPw = '$userPw'";
+$sql = "select uGuId, userId, userNick from userTable where userId = '$userId' and userPw = '$userPw'";
 
 $result = mysqli_query($conn, $sql);
 $userInfo = mysqli_fetch_assoc($result);
@@ -31,7 +32,7 @@ if($userInfo !== null){
     signIn($userInfo);
 }
 else{
-    $sql = "select aGuId AS uGuId, adminNick AS userNick from adminTable where adminId = '$userId' and adminPw = '$userPw'";
+    $sql = "select aGuId AS uGuId, adminId AS userId, adminNick AS userNick from adminTable where adminId = '$userId' and adminPw = '$userPw'";
 
     $result = mysqli_query($conn, $sql);
     $userInfo = mysqli_fetch_assoc($result);

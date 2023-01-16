@@ -4,13 +4,14 @@ session_start();
 
 require_once("connDB.php");
 
+$userId = $_SESSION["userId"];
 $userNick = $_SESSION["userNick"];
 $bCategory = $_POST["bCategory"];
 $bTitle = $_POST["bTitle"];
 $bContext = $_POST["bContext"];
 $searchType = $_POST["searchType"];
 
-$boardList = array($bTitle, $bContext, $userNick, $bCategory);
+$boardList = array($userId, $bTitle, $bContext, $userNick, $bCategory);
 
 echo var_dump($boardList);
 
@@ -25,7 +26,7 @@ switch($searchType){
 
 
 function insertBoard($argConn, $argList){
-    $sql = "insert into boardTable (bTitle, bContext, bUserNick, bCategory) values ('$argList[0]', '$argList[1]', '$argList[2]', '$argList[3]');";
+    $sql = "insert into boardTable (bUserId, bTitle, bContext, bUserNick, bCategory) values ('$argList[0]', '$argList[1]', '$argList[2]', '$argList[3]', '$argList[4]');";
     $result = mysqli_query($argConn, $sql);
     
     if($result){
