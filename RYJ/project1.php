@@ -69,7 +69,7 @@
   <body>
     <header align=center>
       <h1>
-        <a href="index.php">사이트이름</a>
+        <a href="index.php">사이트이름.</a>
       </h1>
     </header>
     <?
