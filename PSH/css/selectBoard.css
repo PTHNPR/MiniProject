@@ -1,0 +1,8 @@
+.board_view_container{
+    display: flex;
+    margin: 30px auto auto auto;
+    flex-direction: column;
+    width: 600px;
+
+    border: 1px solid black;
+}

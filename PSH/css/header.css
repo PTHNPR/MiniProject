@@ -2,8 +2,8 @@
 
 body{
     width :1080px;
-    height: 900px;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 /* 헤더 */
