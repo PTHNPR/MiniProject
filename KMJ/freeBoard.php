@@ -1,7 +1,13 @@
+<!-- 자유게시판 -->
+<?php
+include "session.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MainPage</title>
+    <meta charset="utf-8">
+    <title>freeBoardPage</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -15,7 +21,19 @@
     </div>
     <!-- 로그인 버튼 -->
     <div class="box">
-        <a href="signIn.php">Login</a>
+               
+<!--로그인 상태 판별 창-->
+<?php
+    if(!$userid){
+?>
+        <a href="signIn.php">로그인</a>
+<?php
+    } else {
+?> 
+        <a href="logout.php">로그아웃</a>
+<?php       
+    }
+?>
     </div>
     <!-- 카테고리 -->
     <div class="menu_wrap">
@@ -44,77 +62,89 @@
                         <th scope="col" class="no">글쓴이</th>
                         <th scope="col" class="no">날짜</th>
                     </tr>
-                </thead> 
-                <!--공지사항 게시글-->
+                </thead>
+                <tbody> 
+                <?php
+               
+                
+                /* 회원 게시판 글 목록 보기 */
+                
+                if (isset($_GET["page"]))
+                    $page = $_GET["page"];
+                else
+                    $page = 1;
+
+                $con = mysqli_connect("localhost", "KMJ", "123456", "miniproject");
+                $sql = "select * from boardtable order by bGuId desc";
+                $result = mysqli_query($con, $sql);
+
+                $total_record = mysqli_num_rows($result); // 전체 글 수
+                
+                $scale = 5; // 한 화면에 표시되는 글 수 
+
+                // 전체 페이지 수 ($total_page)계산
+                if ($total_record % $scale == 0)
+                    $total_page = floor($total_record/$scale);
+                else
+                    $total_page = floor($total_record/$scale)+1;
+                
+                // 표시할 페이지($page)에 따라 $start 계산
+                $start = (intval($page) - 1) * $scale;
+
+                $number = $total_record - $start;
+                for($i=$start;$i<$start+$scale && $i < $total_record; $i++){
+                    mysqli_data_seek($result, $i); //가져올 레코드로 이동
+                    $row = mysqli_fetch_assoc($result); //하나의 레코드 가져오기
+                
+                    $num = $row["bGuId"]; //레코드 번호
+                    $id = $row["bUserId"]; // 아이디
+                    $name = $row["bUserNick"]; //이름
+                    $subject = $row["bTitle"]; // 제목
+                    $regist_day = $row["bDate"]; // 작성일
+                     
+                    ?>
+                    <!-- 페이지 -->
+                    <tr class="notice">
+                        <td class="notice_box"><?=$number?></td>
+                        <td class="title"><a style="color: black;" href="view.php?num=<?=$num?>&page=<?=$page?>"><?=$subject?></a></td>
+                        <td class="author"><?=$name?></td>
+                        <td class="time"><?=$regist_day?></td>
+                    </tr>
+                    <?php
+                    $number--;
+                }
+                mysqli_close($con);
+                    ?>
+                </tbody>
+                <!--페이지 번호 매김-->
+                    <tbody class="page_num">
+                <?php
+                if ($total_page>=2&& $page >= 2){
+                    $new_page = $page - 1;
+                    echo "<tr><td><a href='freeBoard.php?page=$new_page'>이전</a></td></tr>";
+                } else
+                    echo "<tr><td>&nbsp;<td></tr>";
+                // 게시판 목록 하단에 페이지 링크 번호 출력
+                for ($i=1; $i<=$total_page;$i++){
+                    if ($page == $i) // 현재 페이지 번호 링크 안함
+                        echo "<tr><td>$i</td></tr>";
+                    else
+                        echo "<tr><td><a href='freeBoard.php?page=$i'>$i</a></td></tr>";
+                }
+                if ($total_page>=2 && $page != $total_page) {
+                    $new_page = $page + 1;
+                    echo "<tr><td><a href='freeBoard.php?page=$new_page'>다음</a></td></tr>";    
+                } else
+                    echo "<tr><td>&nbsp;</td></tr>";
+?>
+                </tbody>    <!-- 페이지 번호 매김 끝-->
                 <tbody>
-                    <tr class="notice">
-                        <td class="notice_box">10</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
-                    <tr class="notice">
-                        <td class="notice_box">9</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
-                    <tr class="notice">
-                        <td class="notice_box">8</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
-                    <tr class="notice">
-                        <td class="notice_box">7</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
-                    <tr class="notice">
-                        <td class="notice_box">6</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
-                    <tr class="notice">
-                        <td class="notice_box">5</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
-                    <tr class="notice">
-                        <td class="notice_box">4</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
-                    <tr class="notice">
-                        <td class="notice_box">3</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
-                    <tr class="notice">
-                        <td class="notice_box">2</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
-                    <tr class="notice_final">
-                        <td class="notice_box">1</td>
-                        <td class="title">테스트 입니다.</td>
-                        <td class="author"></td>
-                        <td class="time">2022.12.01</td>
-                    </tr>
+                    <tr><td><button onclick="location.href='freeBoard.php?page=<?=$page?>'">목록</button></td></tr>
+                    <tr><td><button onclick="location.href='insertBoard.php'">글쓰기</button></td></tr>
                 </tbody>
             </table>
-            
-            <div></div>
         </div>
-    </div>
-    </div>
-    <?php
-    ?>
+    </div>    
+</div>
 </body>
 </html>

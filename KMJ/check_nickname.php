@@ -1,3 +1,5 @@
+<!-- 닉네임 중복체크 스크립트창 -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +12,7 @@
     <h3>닉네임 중복체크</h3>
     <div>
     <?php
-    $userNick = $_GET["userNick"];
+    $userNick = $_GET["nick"];
 
     if(!$userNick){
         echo ("닉네임을 입력해 주세요!");

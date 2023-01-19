@@ -1,3 +1,5 @@
+<!-- 아이디 중복체크 스크립트 창-->
+
 <!DOCTYPE html>
 <html>
 <head>
