@@ -1,3 +1,4 @@
+<!-- 로그인 처리 php -->
 <?php
 $id = $_POST["id"];
 $pw = $_POST["pw"];
@@ -32,7 +33,7 @@ else{
         $_SESSION["username"] = $row["userName"];
 
         echo "<script>
-            location.href = 'index.php';
+            location.href = 'main.php';
             </script>";
     }
 }

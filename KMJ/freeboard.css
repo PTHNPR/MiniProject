@@ -1,7 +1,7 @@
 /* 중앙정렬전 전체 값 초기화 */ 
 *{
     margin: 0; padding: 0;
-}
+} 
 
 /* 중앙정렬화 */
 body{
@@ -193,3 +193,10 @@ th.title{
 .title {
     text-align: center;
 }
+
+/* 글쓰기버튼 css*/
+button{
+    position: absolute;
+    top: 600px;
+}
+
