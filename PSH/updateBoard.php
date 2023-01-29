@@ -84,7 +84,7 @@ else if($sUserId !== $boardArr["bUserId"]){
                                 <option value="자유">자유</option>
                                 <option value="STUDY">STUDY</option>
                             </select>
-                            <?php } ?>
+                            <?php } ?> 
                         </div>
                         <div class="form_input_context">
                             <div class="context_title_div">
