@@ -1,6 +1,12 @@
+<!-- 세션적용 유무 확인 -->
+<?php
+include "session.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>MainPage</title>
     <link rel="stylesheet" href="main.css">
 </head>
@@ -15,13 +21,26 @@
     </div>
     <!-- 로그인 버튼 -->
     <div class="box">
-        <a href="signIn.php">Login</a>
+        
+<!--로그인 상태 판별 창-->
+<?php
+    if(!$userid){
+?>
+        <a href="signIn.php">로그인</a>
+<?php
+    } else {
+?> 
+        <a href="logout.php">로그아웃</a>
+<?php       
+    }
+?>
+
     </div>
     <!-- 카테고리 -->
     <div class="menu_wrap">
             <a class="item" href="#">전체게시판</a>
             <a class="item" href="#">공지사항</a>
-            <a class="item" href="#">자유</a>
+            <a class="item" href="freeBoard.php">자유</a>
             <a class="item" href="#">Study</a>
     </div>
     </div>
@@ -146,7 +165,5 @@
         </div>
     </div>
     </div>
-    <?php
-    ?>
 </body>
 </html>
