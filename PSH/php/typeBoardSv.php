@@ -11,7 +11,7 @@ $bCategory = $_POST["bCategory"];
 $bTitle = $_POST["bTitle"];
 $bContext = $_POST["bContext"];
 $searchType = $_POST["searchType"];
-$bGuId = $_POST["bGuId"];
+
 
 $boardList = array($userId, $bTitle, $bContext, $userNick, $bCategory, $uGuId);
 
@@ -22,17 +22,21 @@ switch($searchType){
         insertBoard($conn, $boardList);
         break;
     case "updateBoard":
+        $bGuId = $_POST["bGuId"];
         updateBoard($conn, $boardList, $bGuId);
         break;
 }
 
 
 function insertBoard($argConn, $argList){
-    if($argList[4] !== "공지")
+    if($argList[4] !== "공지"){
         $sql = "insert into boardTable (bUserId, bTitle, bContext, bUserNick, bCategory) ";
-    else
+        $sql .= "values ('$argList[0]', '$argList[1]', '$argList[2]', '$argList[3]', '$argList[4]');";
+    }
+    else{
         $sql = "insert into noticeTable (nAdminId, nTitle, nContext, nAdminNick) ";
-    $sql .= "values ('$argList[0]', '$argList[1]', '$argList[2]', '$argList[3]');";
+        $sql .= "values ('$argList[0]', '$argList[1]', '$argList[2]', '$argList[3]');";
+    }
     $result = mysqli_query($argConn, $sql);
     
     if($result){

@@ -15,7 +15,7 @@ $boardLen = mysqli_num_rows($boardResult);
 <meta charset="UTF-8">
 <html>
     <head>
-        <title>메인</title>
+        <title>메인 페이지</title>
         <script src="js/mainBoard.js"></script>
         <link rel="stylesheet" href="css/commonBoard.css">
         <link rel="stylesheet" href="css/main.css">
