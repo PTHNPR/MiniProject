@@ -3,7 +3,8 @@
 <html>
     <head>
         <title>게시판 작성</title>
-        <link rel="stylesheet" href="css/insertBoard.css">
+        <link rel="stylesheet" href="css/typeBoard.css">
+        <script src="js/typeBoard.js"></script>
     </head>
     <body> 
         <?php require_once("php/header.php");  ?> <!-- 헤더 파일 -->
@@ -13,10 +14,10 @@
                     <span>게시판 작성</span>
                 </div>
                 <div class="board_form_div">
-                    <form class="board_form" id="board_form" method="POST" action="php/instBoardSv.php">
+                    <form class="board_form" id="board_form" method="POST" action="php/typeBoardSv.php">
                         <div class="form_input_title">
                             <label for="input_title">
-                                <span>제 목</span>
+                                <span class="input_title_span">Title</span>
                             </label>
                             <input type="text" class="input_title" id="input_title" name="bTitle">
                         </div>
@@ -24,7 +25,8 @@
                             if($_GET["Category"] === "전체"){ 
                         ?>
                         <div class="search_Category">
-                            <select name="bCategory" required>
+                            <span class="input_title_span">Category</span>
+                            <select name="bCategory" class="sel_category" required>
                                 <option value="자유">자유</option>
                                 <option value="STUDY">STUDY</option>
                             </select>
@@ -33,10 +35,13 @@
                         <input type="hidden" name="bCategory" value="<?= $_GET["Category"]; ?>">
                         <?php } ?>
                         <div class="form_input_context">
-                            <label for="input_context">
-                                <span>내 용</span>
-                            </label>
-                            <textarea class="input_context" id="input_context" name="bContext"></textarea>
+                            <div class="context_title_div">
+                                <label for="input_context">
+                                    <span class="input_title_span">Context</span>
+                                </label>
+                                <div>( <span id="now_byte">0</span> / <span>500</span> )</div>
+                            </div>
+                            <textarea class="input_context" id="input_context" onkeyup="checkByte(this)" maxlength="500" name="bContext" cols="75" rows="12"></textarea>
                         </div>
                         <input type="hidden" name="searchType" value="insertBoard">
                     </form>

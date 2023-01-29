@@ -12,7 +12,7 @@
                             ?>
                             <tr>
                                 <td class="t_category" id="t_notice">&#60;공 지&#62;</td>
-                                <td class="t_title" id="t_title" onclick="location.href='selectBoard.php?num=<?= $noticeArr[$i][0]; ?>'"><?= $noticeArr[$i][1]; ?></td>
+                                <td class="t_title" id="t_title" onclick="location.href='selectBoard.php?num=<?= $noticeArr[$i][0]; ?>&Category=공지'"><?= $noticeArr[$i][1]; ?></td>
                                 <td class="t_nick"><?= $noticeArr[$i][2]; ?></td>
                                 <td class="t_date"><?= $noticeArr[$i][3]; ?></td>
                             </tr>

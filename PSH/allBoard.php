@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("php/noticeDBsql.php"); // 공공지사항 쿼리문 (DB 연결 포함)
 
 $boardSql = "select bCategory, bGuId, bTitle, bUserNick, bDate from boardTable order by bDate desc;";
@@ -34,7 +35,7 @@ $boardLen = mysqli_num_rows($boardResult);
                             ?>
                             <tr>
                                 <td class="t_category"><?= $boardArr[$i][0] ?></td>
-                                <td class="t_title" id="t_title" onclick="location.href='selectBoard.php?num=<?= $boardArr[$i][1]; ?>'"><?= $boardArr[$i][2]; ?></td>
+                                <td class="t_title" id="t_title" onclick="location.href='selectBoard.php?num=<?= $boardArr[$i][1]; ?>&Category=<?= $boardArr[$i][0] ?>'"><?= $boardArr[$i][2]; ?></td>
                                 <td class="t_nick"><?= $boardArr[$i][3]; ?></td>
                                 <td class="t_date"><?= $boardArr[$i][4]; ?></td>
                             </tr>

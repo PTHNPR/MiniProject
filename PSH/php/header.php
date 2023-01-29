@@ -1,4 +1,3 @@
-<?php session_start(); ?>
         <link rel="stylesheet" href="css/header.css">
         <!-- 폰트어썸 사용(아이콘 사용) -->
         <script src="https://kit.fontawesome.com/b71869ee5c.js" crossorigin="anonymous"></script>

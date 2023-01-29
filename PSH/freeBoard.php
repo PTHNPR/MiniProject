@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("php/noticeDBsql.php"); // 공지사항 쿼리문 (DB 연결 포함)
 
 $boardSql = "select bGuId, bTitle, bUserNick, bDate from boardTable where bCategory='자유' order by bDate desc;";
