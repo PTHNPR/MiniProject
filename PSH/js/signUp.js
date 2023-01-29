@@ -10,6 +10,14 @@ document.getElementById('comfirmPw').addEventListener('blur', userPwCmf);
 function userIdChecked(){
 	let userId_msg = document.getElementById('userId_msg');
 	let userId = document.getElementById('userId');
+
+    if(userId.value === ''){
+        userId_msg.innerText = '입력하세요.';
+		userId_msg.style.color = 'red';
+        flagList[0] = false;
+        return;
+    }
+
 	const request = new XMLHttpRequest();
     request.open("GET", 'php/signUpFolder/idChecked.php' + '?userId=' + userId.value, true); // false 사용 안됨
     request.setRequestHeader('Content-type', 'text; charset=UTF-8');
@@ -41,6 +49,14 @@ function userIdChecked(){
 function userNickChecked(){
 	let userNick_msg = document.getElementById('userNick_msg');
 	let userNick = document.getElementById('userNick');
+
+    if(userNick.value === ''){
+        userNick_msg.innerText = '입력하세요.';
+        userNick_msg.style.color = 'red';
+        flagList[1] = false;
+        return;
+    }
+
 	const request = new XMLHttpRequest();
     request.open("GET", 'php/signUpFolder/nickChecked.php' + '?userNick=' + userNick.value, true); // false 사용 안됨
     request.setRequestHeader('Content-type', 'text; charset=UTF-8');
@@ -79,6 +95,11 @@ function userPwCmf(){
 
     if(comfirmPw !== userPw){
         confirmPw_msg.innerText = '일치하지 않습니다';
+		confirmPw_msg.style.color = 'red';
+        flagList[2] = false;
+    }
+    else if(comfirmPw === ''){
+        confirmPw_msg.innerText = '입력해주세요';
 		confirmPw_msg.style.color = 'red';
         flagList[2] = false;
     }
