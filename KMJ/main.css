@@ -180,6 +180,10 @@
             border-right: 1px solid black;
         }
         
+        tbody tr:last-child>td{
+            border-bottom: 1px solid black;
+        }
+        
         /* 공지사항과 전체게시글 공백 */
         .main_table{
             padding-top: 10px;
@@ -192,4 +196,8 @@
         }
         .title {
             text-align: center;
+        }
+
+        li {
+            list-style: none;
         }

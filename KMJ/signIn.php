@@ -37,10 +37,10 @@
     </div>
     <!-- 카테고리 -->
     <div class="menu_wrap">
-            <a class="item" href="#">전체게시판</a>
-            <a class="item" href="#">공지사항</a>
+            <a class="item" href="main.php">전체게시판</a>
+            <a class="item" href="noticeBoard.php">공지사항</a>
             <a class="item" href="freeBoard.php">자유</a>
-            <a class="item" href="#">Study</a>
+            <a class="item" href="studyBoard.php">Study</a>
     </div>
     </div>
     <!-- 900 경계구역 양측 200px ##게시판 + 공지사항+ 글-->
@@ -76,7 +76,7 @@
                             <td></td>
                             <td class="regi_box"><a class="register" href="signUp.php">회원가입</a></td>
                             <td width="5"></td>
-                            <td class="IdCh_box"><a class="IdCh">아이디 찾기</a></td>   
+                            <td class="IdCh_box"><a class="IdCh" href="findId.php">아이디 찾기</a></td>   
                         </tr>
                         </tbody>
                     </table>    

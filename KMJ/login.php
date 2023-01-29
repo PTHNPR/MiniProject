@@ -5,9 +5,12 @@ $pw = $_POST["pw"];
 
 $con = mysqli_connect("localhost", "KMJ", "123456", "miniproject");
 $sql = "select * from usertable where userId='$id'";
+
 $result = mysqli_query($con, $sql);
 
+
 $num_match = mysqli_num_rows($result);
+
 
 if(!$num_match) {
     echo "<script>
@@ -17,6 +20,7 @@ if(!$num_match) {
 }
 else{
     $row = mysqli_fetch_assoc($result);
+   
     $db_pass = $row["userPw"];
     
     mysqli_close($con);
@@ -28,9 +32,13 @@ else{
         exit;
     }
     else {
-        session_start();
-        $_SESSION["userid"] = $row["userId"];
-        $_SESSION["username"] = $row["userName"];
+
+        /* 유저 */
+    if ($num_match) {
+            session_start();
+            $_SESSION["userid"] = $row["userId"];
+            $_SESSION["username"] = $row["userName"];
+        }
 
         echo "<script>
             location.href = 'main.php';

@@ -19,12 +19,14 @@
     }
     else{
         $con = mysqli_connect("localhost", "KMJ", "123456", "miniproject");
-        $sql = "select * from usertable where userNick='$userNick'";
-        $result = mysqli_query($con, $sql);
+        $sql1 = "select * from usertable where userNick='$userNick'";
+        $sql2 = "select * from admintable where adminNick='$userNick'";
+        $result1 = mysqli_query($con, $sql1);
+        $result2 = mysqli_query($con, $sql2);
+        $num_record1 = mysqli_num_rows($result1);
+        $num_record2 = mysqli_num_rows($result2);
 
-        $num_record = mysqli_num_rows($result);
-        
-        if($num_record){
+        if($num_record1 || $num_record2){
             echo $userNick . "닉네임은 중복됩니다.<br>";
             echo "다른 닉네임을 사용해 주세요!<br>";
         }

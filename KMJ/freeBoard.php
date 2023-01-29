@@ -8,7 +8,7 @@ include "session.php";
 <head>
     <meta charset="utf-8">
     <title>freeBoardPage</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="freeboard.css">
 </head>
 <body>
     <!-- 전체 배너 -->
@@ -37,10 +37,10 @@ include "session.php";
     </div>
     <!-- 카테고리 -->
     <div class="menu_wrap">
-            <a class="item" href="#">전체게시판</a>
-            <a class="item" href="freeBoard.php">공지사항</a>
-            <a class="item" href="#">자유</a>
-            <a class="item" href="#">Study</a>
+            <a class="item" href="main.php">전체게시판</a>
+            <a class="item" href="noticeBoard.php">공지사항</a>
+            <a class="item" href="freeBoard.php">자유</a>
+            <a class="item" href="studyBoard.php">Study</a>
     </div>
     </div>
     <!-- 900 경계구역 양측 200px ##게시판 + 공지사항+ 글-->
@@ -64,9 +64,8 @@ include "session.php";
                     </tr>
                 </thead>
                 <tbody> 
-                <?php
-               
-                
+                    
+<?php                               
                 /* 회원 게시판 글 목록 보기 */
                 
                 if (isset($_GET["page"]))
@@ -75,7 +74,8 @@ include "session.php";
                     $page = 1;
 
                 $con = mysqli_connect("localhost", "KMJ", "123456", "miniproject");
-                $sql = "select * from boardtable order by bGuId desc";
+                // $sql = "select * from boardtable order by bGuId desc";
+                $sql = "select * from boardtable where bCategory = '자유'";
                 $result = mysqli_query($con, $sql);
 
                 $total_record = mysqli_num_rows($result); // 전체 글 수
@@ -116,35 +116,41 @@ include "session.php";
                 mysqli_close($con);
                     ?>
                 </tbody>
+                </table>
+
+                <footer id="pageMenu">
                 <!--페이지 번호 매김-->
-                    <tbody class="page_num">
+                    <ul class="page_num" id="page1">
                 <?php
                 if ($total_page>=2&& $page >= 2){
                     $new_page = $page - 1;
-                    echo "<tr><td><a href='freeBoard.php?page=$new_page'>이전</a></td></tr>";
+                    echo "<li><a class='pageMenu' href='freeBoard.php?page=$new_page' style='color:black'>이전</a></li>";
                 } else
-                    echo "<tr><td>&nbsp;<td></tr>";
+                    echo "<li class='pageMenu'>&nbsp;<li>";
                 // 게시판 목록 하단에 페이지 링크 번호 출력
                 for ($i=1; $i<=$total_page;$i++){
-                    if ($page == $i) // 현재 페이지 번호 링크 안함
-                        echo "<tr><td>$i</td></tr>";
+                    if ($page == $i && $i!=0) // 현재 페이지 번호 링크 안함
+                        echo "<li class='pageMenu'>$i</li>";
                     else
-                        echo "<tr><td><a href='freeBoard.php?page=$i'>$i</a></td></tr>";
+                        echo "<li class='pageMenu'><a href='freeBoard.php?page=$i' style='color:black'>$i</a></li>";
                 }
                 if ($total_page>=2 && $page != $total_page) {
                     $new_page = $page + 1;
-                    echo "<tr><td><a href='freeBoard.php?page=$new_page'>다음</a></td></tr>";    
+                    echo "<li class='pageMenu'><a href='freeBoard.php?page=$new_page' style='color:black'>다음</a></li>";    
                 } else
-                    echo "<tr><td>&nbsp;</td></tr>";
-?>
-                </tbody>    <!-- 페이지 번호 매김 끝-->
-                <tbody>
-                    <tr><td><button onclick="location.href='freeBoard.php?page=<?=$page?>'">목록</button></td></tr>
-                    <tr><td><button onclick="location.href='insertBoard.php'">글쓰기</button></td></tr>
-                </tbody>
-            </table>
+                    echo "<li class='pageMenu'>&nbsp;</li>";
+?>  
+                </ul>    <!-- 페이지 번호 매김 끝-->
+                <ul class="buttons" id="page2">  
+                    <li>&nbsp;</li>
+                    <li><button onclick="location.href='freeBoard.php?page=<?=$page?>'">목록</button></li>
+                    <li><button onclick="location.href='insertBoard.php'">글쓰기</button></li>
+                    <li>&nbsp;</li>
+                </ul>
+                </footer>
         </div>
     </div>    
 </div>
+
 </body>
 </html>

@@ -23,7 +23,8 @@ div{
 a{
     text-decoration: none;
 }
-a:link { color:white; text-decoration:none; }
+div>a:link { color:white; text-decoration:none; }
+td>a:link { color:black; text-decoration:none; }
 a:visited { color:white; text-decoration:none; }
 a:hover { color:white; text-decoration:none; }
 /* 헤드 배너 전체 구역 */
@@ -179,6 +180,9 @@ th:first-child, td:first-child {
 th:last-child, td:last-child{
     border-right: 1px solid black;
 }
+tr:last-child>td{
+    border-bottom: 1px solid black;
+}
 
 /* 공지사항과 전체게시글 공백 */
 .main_table{
@@ -195,8 +199,32 @@ th.title{
 }
 
 /* 글쓰기버튼 css*/
-button{
-    position: absolute;
-    top: 600px;
+#page2.button{
+    top: none;
+    position: relative;
 }
 
+footer{
+    height: 80px;
+    width: 900px;
+}
+#page1, #page2 {
+    position: relative;
+    height: 40px;
+}
+#pageMenu ul li {
+    line-height: 40px;
+    min-width: 225px;       
+    float: left;
+    vertical-align: middle;  
+    text-align: center;   
+    list-style: none; 
+}
+
+#pageMenu .pageMenu{
+    text-decoration:none;                  
+    display: block;                     
+    width: 150px;                           
+    font-size: 12px;                          
+    font-weight: bold;
+}

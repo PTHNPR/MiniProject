@@ -23,6 +23,7 @@ include "session.php"; // 세션처리
             document.board.content.focus();
             return;
         }
+        
         document.board.submit();
         }
     </script>
@@ -54,10 +55,10 @@ include "session.php"; // 세션처리
     </div>
     <!-- 카테고리 -->
     <div class="menu_wrap">
-            <a class="item" href="#">전체게시판</a>
-            <a class="item" href="#">공지사항</a>
+            <a class="item" href="main.php">전체게시판</a>
+            <a class="item" href="noticeBoard.php">공지사항</a>
             <a class="item" href="freeBoard.php">자유</a>
-            <a class="item" href="#">Study</a>
+            <a class="item" href="studyBoard.php">Study</a>
     </div>
     </div>
     <!--회원가입 전체 칸-->
@@ -71,7 +72,14 @@ include "session.php"; // 세션처리
                 <tbody>
                 <tr>
                     <td>글쓴이 : </td>
-                    <td><?=$username?></td> 
+                    <td><?=$username?><?=$adminname?></td> 
+                </tr>
+                <tr>
+                    <td>게시판 종류</td>
+                    <td><select name="category">
+                        <option>자유</option>
+                        <option>Study</option>
+                    </select></td>
                 </tr>
                 <tr>
                     <td>글 제목 : </td>

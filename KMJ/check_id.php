@@ -19,12 +19,13 @@
     }
     else{
         $con = mysqli_connect("localhost", "KMJ", "123456", "miniproject");
-        $sql = "select * from usertable where userId='$id'";
-        $result = mysqli_query($con, $sql);
-
-        $num_record = mysqli_num_rows($result);
-        
-        if($num_record){
+        $sql1 = "select * from usertable where userId='$id'";
+        $sql2 = "select * from admintable where adminId='$id'";
+        $result1 = mysqli_query($con, $sql1);
+        $result2 = mysqli_query($con, $sql2);
+        $num_record1 = mysqli_num_rows($result1);
+        $num_record2 = mysqli_num_rows($result2);
+        if($num_record1 || $num_record2){
             echo $id . "아이디는 중복됩니다.<br>";
             echo "다른 아이디를 사용해 주세요!<br>";
         }
