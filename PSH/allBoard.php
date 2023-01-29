@@ -15,7 +15,7 @@ $boardLen = mysqli_num_rows($boardResult);
 <meta charset="UTF-8">
 <html>
     <head>
-        <title>전체 게시판</title>
+        <title>전체게시판</title>
         <link rel="stylesheet" href="css/commonBoard.css">
         <script src="js/boardJs.js"></script>
     </head>
@@ -24,7 +24,7 @@ $boardLen = mysqli_num_rows($boardResult);
         <container class="main_container">
             <div class="board_div">
                 <div class="board_title">
-                    <span>전체 게시판</span>
+                    <span>전체게시판</span>
                 </div>
                 <?php require_once("php/commonNotice.php");  ?> <!-- 공통 공지사항 파일 -->
                 <div class="user_boardDiv">
